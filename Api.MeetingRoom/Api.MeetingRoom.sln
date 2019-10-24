@@ -1,0 +1,84 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29403.142
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.MeetingRoom", "Api.MeetingRoom\Api.MeetingRoom.csproj", "{848BB121-D8ED-47AE-AF86-64D21EAD01E2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Application", "1 - Application", "{A7321EEE-DB35-4F95-ACF8-CF08DED5DF5B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - DTO", "2 - DTO", "{F7240B92-1549-401D-B520-0047941A20DA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{9AD78213-5197-4F3A-9E04-7CEFD6E0CC66}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Business", "4 - Business", "{64C883A7-8B4A-46A9-964B-41163FB0DDFA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Repository", "5 - Repository", "{1DFCB7BF-A7D9-44D2-8210-9CFD88F6010D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6 - Helper", "6 - Helper", "{81C7BDA9-B755-4D78-A9C0-AA39D910829F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7 - Test", "7 - Test", "{FFE128BB-CDE9-4C06-8CEE-DF79340EAC56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.MeetingRoom.DTO", "Api.MeetingRoom.DTO\Api.MeetingRoom.DTO.csproj", "{88D21DE7-460A-4F7B-AE15-0734D7C97774}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.MeetingRoom.Domain", "Api.MeetingRoom.Domain\Api.MeetingRoom.Domain.csproj", "{B5B244FB-0133-4A7D-B1C4-3538944F54DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.MeetingRoom.Business", "Api.MeetingRoom.Business\Api.MeetingRoom.Business.csproj", "{5042DC1E-408B-40D3-8876-2CB71A88F00E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.MeetingRoom.Repository", "Api.MeetingRoom.Repository\Api.MeetingRoom.Repository.csproj", "{ABF075E9-E776-44A8-B342-D9BF10F41848}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.MeetingRoom.Helper", "Api.MeetingRoom.Helper\Api.MeetingRoom.Helper.csproj", "{D899B115-46F1-4B7C-B313-9F345A9D3023}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.MeetingRoom.Test", "Api.MeetingRoom.Test\Api.MeetingRoom.Test.csproj", "{2861C9EC-F906-4C39-9F71-4F65526E0847}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{848BB121-D8ED-47AE-AF86-64D21EAD01E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{848BB121-D8ED-47AE-AF86-64D21EAD01E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{848BB121-D8ED-47AE-AF86-64D21EAD01E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{848BB121-D8ED-47AE-AF86-64D21EAD01E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88D21DE7-460A-4F7B-AE15-0734D7C97774}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88D21DE7-460A-4F7B-AE15-0734D7C97774}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88D21DE7-460A-4F7B-AE15-0734D7C97774}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88D21DE7-460A-4F7B-AE15-0734D7C97774}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5B244FB-0133-4A7D-B1C4-3538944F54DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5B244FB-0133-4A7D-B1C4-3538944F54DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5B244FB-0133-4A7D-B1C4-3538944F54DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5B244FB-0133-4A7D-B1C4-3538944F54DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5042DC1E-408B-40D3-8876-2CB71A88F00E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5042DC1E-408B-40D3-8876-2CB71A88F00E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5042DC1E-408B-40D3-8876-2CB71A88F00E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5042DC1E-408B-40D3-8876-2CB71A88F00E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABF075E9-E776-44A8-B342-D9BF10F41848}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABF075E9-E776-44A8-B342-D9BF10F41848}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABF075E9-E776-44A8-B342-D9BF10F41848}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABF075E9-E776-44A8-B342-D9BF10F41848}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D899B115-46F1-4B7C-B313-9F345A9D3023}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D899B115-46F1-4B7C-B313-9F345A9D3023}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D899B115-46F1-4B7C-B313-9F345A9D3023}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D899B115-46F1-4B7C-B313-9F345A9D3023}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2861C9EC-F906-4C39-9F71-4F65526E0847}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2861C9EC-F906-4C39-9F71-4F65526E0847}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2861C9EC-F906-4C39-9F71-4F65526E0847}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2861C9EC-F906-4C39-9F71-4F65526E0847}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{848BB121-D8ED-47AE-AF86-64D21EAD01E2} = {A7321EEE-DB35-4F95-ACF8-CF08DED5DF5B}
+		{88D21DE7-460A-4F7B-AE15-0734D7C97774} = {F7240B92-1549-401D-B520-0047941A20DA}
+		{B5B244FB-0133-4A7D-B1C4-3538944F54DA} = {9AD78213-5197-4F3A-9E04-7CEFD6E0CC66}
+		{5042DC1E-408B-40D3-8876-2CB71A88F00E} = {64C883A7-8B4A-46A9-964B-41163FB0DDFA}
+		{ABF075E9-E776-44A8-B342-D9BF10F41848} = {1DFCB7BF-A7D9-44D2-8210-9CFD88F6010D}
+		{D899B115-46F1-4B7C-B313-9F345A9D3023} = {81C7BDA9-B755-4D78-A9C0-AA39D910829F}
+		{2861C9EC-F906-4C39-9F71-4F65526E0847} = {FFE128BB-CDE9-4C06-8CEE-DF79340EAC56}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F5AD4D56-BC82-4C03-9168-0583F05E9049}
+	EndGlobalSection
+EndGlobal
