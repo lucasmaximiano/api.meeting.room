@@ -9,6 +9,7 @@
       "Api.MeetingRoom.Test/1.0.0": {
         "dependencies": {
           "Api.MeetingRoom": "1.0.0",
+          "Api.MeetingRoom.DTO": "1.0.0",
           "Microsoft.AspNetCore.TestHost": "3.0.0",
           "Microsoft.NET.Test.Sdk": "16.2.0",
           "NUnit3TestAdapter": "3.13.0",
@@ -1026,6 +1027,11 @@
         "runtime": {
           "Api.MeetingRoom.dll": {}
         }
+      },
+      "Api.MeetingRoom.DTO/1.0.0": {
+        "runtime": {
+          "Api.MeetingRoom.DTO.dll": {}
+        }
       }
     }
   },
@@ -1554,6 +1560,11 @@
       "hashPath": "system.xml.xpath.xmldocument.4.3.0.nupkg.sha512"
     },
     "Api.MeetingRoom/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Api.MeetingRoom.DTO/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

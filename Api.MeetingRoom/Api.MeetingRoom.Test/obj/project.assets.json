@@ -1475,6 +1475,16 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "Api.MeetingRoom.DTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "compile": {
+          "bin/placeholder/Api.MeetingRoom.DTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Api.MeetingRoom.DTO.dll": {}
+        }
       }
     }
   },
@@ -5328,11 +5338,17 @@
       "type": "project",
       "path": "../Api.MeetingRoom/Api.MeetingRoom.csproj",
       "msbuildProject": "../Api.MeetingRoom/Api.MeetingRoom.csproj"
+    },
+    "Api.MeetingRoom.DTO/1.0.0": {
+      "type": "project",
+      "path": "../Api.MeetingRoom.DTO/Api.MeetingRoom.DTO.csproj",
+      "msbuildProject": "../Api.MeetingRoom.DTO/Api.MeetingRoom.DTO.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
       "Api.MeetingRoom >= 1.0.0",
+      "Api.MeetingRoom.DTO >= 1.0.0",
       "Microsoft.AspNetCore.TestHost >= 3.0.0",
       "Microsoft.NET.Test.Sdk >= 16.2.0",
       "NUnit3TestAdapter >= 3.13.0",
@@ -5365,6 +5381,9 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
+            "C:\\GitHub\\api.meeting.room\\Api.MeetingRoom\\Api.MeetingRoom.DTO\\Api.MeetingRoom.DTO.csproj": {
+              "projectPath": "C:\\GitHub\\api.meeting.room\\Api.MeetingRoom\\Api.MeetingRoom.DTO\\Api.MeetingRoom.DTO.csproj"
+            },
             "C:\\GitHub\\api.meeting.room\\Api.MeetingRoom\\Api.MeetingRoom\\Api.MeetingRoom.csproj": {
               "projectPath": "C:\\GitHub\\api.meeting.room\\Api.MeetingRoom\\Api.MeetingRoom\\Api.MeetingRoom.csproj"
             }

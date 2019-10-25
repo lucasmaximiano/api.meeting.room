@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.0": {
+      "Api.MeetingRoom.Repository/1.0.0": {
+        "runtime": {
+          "Api.MeetingRoom.Repository.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Api.MeetingRoom.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

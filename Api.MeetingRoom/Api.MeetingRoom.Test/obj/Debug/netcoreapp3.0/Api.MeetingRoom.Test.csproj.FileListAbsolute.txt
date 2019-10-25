@@ -97,3 +97,5 @@ C:\GitHub\api.meeting.room\Api.MeetingRoom\Api.MeetingRoom.Test\bin\Debug\netcor
 C:\GitHub\api.meeting.room\Api.MeetingRoom\Api.MeetingRoom.Test\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.TestHost.dll
 C:\GitHub\api.meeting.room\Api.MeetingRoom\Api.MeetingRoom.Test\bin\Debug\netcoreapp3.0\Api.MeetingRoom.dll
 C:\GitHub\api.meeting.room\Api.MeetingRoom\Api.MeetingRoom.Test\bin\Debug\netcoreapp3.0\Api.MeetingRoom.pdb
+C:\GitHub\api.meeting.room\Api.MeetingRoom\Api.MeetingRoom.Test\bin\Debug\netcoreapp3.0\Api.MeetingRoom.DTO.dll
+C:\GitHub\api.meeting.room\Api.MeetingRoom\Api.MeetingRoom.Test\bin\Debug\netcoreapp3.0\Api.MeetingRoom.DTO.pdb

@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Api.MeetingRoom.DTO\Api.MeetingRoom.DTO.csproj" />
     <ProjectReference Include="..\Api.MeetingRoom\Api.MeetingRoom.csproj" />
   </ItemGroup>
 
