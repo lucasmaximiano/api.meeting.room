@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.0": {}
+    ".NETCoreApp,Version=v3.0": {
+      "Api.MeetingRoom.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "compile": {
+          "bin/placeholder/Api.MeetingRoom.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Api.MeetingRoom.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Api.MeetingRoom.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Api.MeetingRoom.Domain/Api.MeetingRoom.Domain.csproj",
+      "msbuildProject": "../Api.MeetingRoom.Domain/Api.MeetingRoom.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.0": []
+    ".NETCoreApp,Version=v3.0": [
+      "Api.MeetingRoom.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Lucas\\.nuget\\packages\\": {}
@@ -32,7 +51,11 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\GitHub\\api.meeting.room\\Api.MeetingRoom\\Api.MeetingRoom.Domain\\Api.MeetingRoom.Domain.csproj": {
+              "projectPath": "C:\\GitHub\\api.meeting.room\\Api.MeetingRoom\\Api.MeetingRoom.Domain\\Api.MeetingRoom.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

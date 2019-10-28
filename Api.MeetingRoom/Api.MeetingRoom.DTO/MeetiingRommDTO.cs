@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Api.MeetingRoom.DTO
 {
@@ -9,9 +8,5 @@ namespace Api.MeetingRoom.DTO
         public string Name { get; set; }
         [Required(ErrorMessage = "O numero da sala é um campo obrigatório")]
         public int Number { get; set; }
-        [Required(ErrorMessage = "A data da reunião é um campo obrigatório")]
-        public DateTime Date { get; set; }
-         [Required(ErrorMessage = "A hora da reunião é um campo obrigatório")]
-        public RangeOfHoursEnumDTO Hour { get; set; }
     }
 }

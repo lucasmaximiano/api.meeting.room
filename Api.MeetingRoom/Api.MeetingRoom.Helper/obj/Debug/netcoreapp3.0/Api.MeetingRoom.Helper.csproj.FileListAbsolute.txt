@@ -1,3 +1,0 @@
-C:\GitHub\api.meeting.room\Api.MeetingRoom\Api.MeetingRoom.Helper\obj\Debug\netcoreapp3.0\Api.MeetingRoom.Helper.csprojAssemblyReference.cache
-C:\GitHub\api.meeting.room\Api.MeetingRoom\Api.MeetingRoom.Helper\obj\Debug\netcoreapp3.0\Api.MeetingRoom.Helper.AssemblyInfoInputs.cache
-C:\GitHub\api.meeting.room\Api.MeetingRoom\Api.MeetingRoom.Helper\obj\Debug\netcoreapp3.0\Api.MeetingRoom.Helper.AssemblyInfo.cs
