@@ -1,7 +1,6 @@
 C:\GitHub\api.meeting.room\Api.MeetingRoom\Api.MeetingRoom.Domain\bin\Debug\netcoreapp3.0\Api.MeetingRoom.Domain.deps.json
 C:\GitHub\api.meeting.room\Api.MeetingRoom\Api.MeetingRoom.Domain\bin\Debug\netcoreapp3.0\Api.MeetingRoom.Domain.dll
 C:\GitHub\api.meeting.room\Api.MeetingRoom\Api.MeetingRoom.Domain\bin\Debug\netcoreapp3.0\Api.MeetingRoom.Domain.pdb
-C:\GitHub\api.meeting.room\Api.MeetingRoom\Api.MeetingRoom.Domain\obj\Debug\netcoreapp3.0\Api.MeetingRoom.Domain.csprojAssemblyReference.cache
 C:\GitHub\api.meeting.room\Api.MeetingRoom\Api.MeetingRoom.Domain\obj\Debug\netcoreapp3.0\Api.MeetingRoom.Domain.AssemblyInfoInputs.cache
 C:\GitHub\api.meeting.room\Api.MeetingRoom\Api.MeetingRoom.Domain\obj\Debug\netcoreapp3.0\Api.MeetingRoom.Domain.AssemblyInfo.cs
 C:\GitHub\api.meeting.room\Api.MeetingRoom\Api.MeetingRoom.Domain\obj\Debug\netcoreapp3.0\Api.MeetingRoom.Domain.dll

@@ -41,6 +41,11 @@ namespace Api.MeetingRoom.Repository
             return await _context.MeetingRoom.Skip(skip).Take(pageSize).ToListAsync();
         }
 
+        public async Task<IEnumerable<MeetingRommModel>> GetAllMeetingRomm()
+        {
+            return await _context.MeetingRoom.ToListAsync();
+        }
+
         public async Task<int> GetAllMeetingRommCount()
         {
             var meetingRoomList = await _context.MeetingRoom.ToListAsync();
@@ -78,5 +83,7 @@ namespace Api.MeetingRoom.Repository
             _context.MeetingRoom.Remove(await GetMeetingRoomById(id));
             await _context.SaveChangesAsync();
         }
+
+
     }
 }

@@ -16,6 +16,7 @@ namespace Api.MeetingRoom.Mappers
         {
             #region MeetiingRomm
             CreateMap<MeetingRommDTO, MeetingRommModel>().ReverseMap();
+            CreateMap<ReserveResponseDTO, ReserveModel>().ReverseMap();
             #endregion
 
             #region MeetingRoomScheduling

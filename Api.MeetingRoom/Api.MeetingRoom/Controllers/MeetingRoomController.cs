@@ -51,7 +51,7 @@ namespace Api.MeetingRoom.Controllers
         [SwaggerResponse(HttpStatusCode.Unauthorized, "Erro de Autenticação", null)]
         [SwaggerResponse(HttpStatusCode.Conflict, "Conflito", null)]
         [SwaggerResponse(HttpStatusCode.InternalServerError, "Erro na API", null)]
-        public async Task<IActionResult> PostMeetingRomm([FromBody]MeetingRommDTO meetiingRomm)
+        public async Task<IActionResult> Post([FromBody]MeetingRommDTO meetiingRomm)
         {
             var meetingRomm = _mapper.Map<MeetingRommModel>(meetiingRomm);
             var newMeetingRomm = await _meetingRoomBusiness.PostMeetingRomm(meetingRomm);
@@ -69,7 +69,7 @@ namespace Api.MeetingRoom.Controllers
         [SwaggerResponse(HttpStatusCode.Unauthorized, "Erro de Autenticação", null)]
         [SwaggerResponse(HttpStatusCode.NotFound, "Recurso não encontrado", null)]
         [SwaggerResponse(HttpStatusCode.InternalServerError, "Erro na API", null)]
-        public async Task<IActionResult> GetAllMeetingRomm([FromQuery]PaginationDTO pagination)
+        public async Task<IActionResult> Get([FromQuery]PaginationDTO pagination)
         {
             var meetingRomms = await _meetingRoomBusiness.GetAllMeetingRomm(pagination.Page, pagination.PageSize);
             var count = await _meetingRoomBusiness.GetAllMeetingRommCount();
@@ -115,7 +115,7 @@ namespace Api.MeetingRoom.Controllers
         [SwaggerResponse(HttpStatusCode.Unauthorized, "Erro de Autenticação", null)]
         [SwaggerResponse(HttpStatusCode.Conflict, "Conflito", null)]
         [SwaggerResponse(HttpStatusCode.InternalServerError, "Erro na API", null)]
-        public async Task<IActionResult> PutMeetingRomm(int id, [FromBody]MeetingRommDTO meetiingRomm)
+        public async Task<IActionResult> Put(int id, [FromBody]MeetingRommDTO meetiingRomm)
         {
             var meetingRomm = _mapper.Map<MeetingRommModel>(meetiingRomm);
             var newMeetingRomm = await _meetingRoomBusiness.PutMeetingRomm(id, meetingRomm);
@@ -123,7 +123,7 @@ namespace Api.MeetingRoom.Controllers
         }
 
         /// <summary>
-        /// Dela uma sala pelo seu id
+        /// Deleta uma sala pelo seu id
         /// </summary>
         /// <param name="id">Id da sala</param>
         [HttpDelete("{id}")]
@@ -132,10 +132,34 @@ namespace Api.MeetingRoom.Controllers
         [SwaggerResponse(HttpStatusCode.Unauthorized, "Erro de Autenticação", null)]
         [SwaggerResponse(HttpStatusCode.NotFound, "Recurso não encontrado", null)]
         [SwaggerResponse(HttpStatusCode.InternalServerError, "Erro na API", null)]
-        public async Task<IActionResult> DeleteMeetingRoom(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             await _meetingRoomBusiness.DeleteMeetingRoom(id);
             return Ok();
+        }
+
+        /// <summary>
+        /// Retorna todas as salas de reunião e suas reservas de acordo com seus filtros
+        /// </summary>
+        /// <param name="pagination">Paginação</param>
+        [HttpGet("reserve")]
+        [ValidateModel]
+        [SwaggerResponse(HttpStatusCode.OK, "OK", typeof(ReservePaginationDTO))]
+        [SwaggerResponse(HttpStatusCode.Unauthorized, "Erro de Autenticação", null)]
+        [SwaggerResponse(HttpStatusCode.NotFound, "Recurso não encontrado", null)]
+        [SwaggerResponse(HttpStatusCode.InternalServerError, "Erro na API", null)]
+        public async Task<IActionResult> GetAllReserve([FromQuery]PaginationDTO pagination)
+        {
+            var reserves = await _meetingRoomBusiness.GetAllReserve(pagination.Page, pagination.PageSize);
+            var count = await _meetingRoomBusiness.GetAllMeetingRommCount();
+
+            var reservePaginationDTO = new ReservePaginationDTO
+            {
+                List = _mapper.Map<List<ReserveResponseDTO>>(reserves),
+                Pagination = GetPagination(count, pagination.Page, pagination.PageSize)
+            };
+
+            return Ok(reservePaginationDTO);
         }
     }
 }

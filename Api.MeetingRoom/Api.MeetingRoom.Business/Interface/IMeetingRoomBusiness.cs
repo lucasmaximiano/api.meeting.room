@@ -10,8 +10,10 @@ namespace Api.MeetingRoom.Business.Interface
         Task<IEnumerable<MeetingRommModel>> GetAllMeetingRomm(int page, int pageSize);
         Task<int> GetAllMeetingRommCount();
         Task<MeetingRommModel> GetMeetingRoomById(int id);
+        Task<IEnumerable<ReserveModel>> GetAllReserve(int page, int pageSize);
         Task<MeetingRommModel> PutMeetingRomm(int id, MeetingRommModel meetingRomm);
         Task DeleteMeetingRoom(int id);
+       
     }
 }
     

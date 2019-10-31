@@ -1,4 +1,5 @@
-﻿using Api.MeetingRoom.Business.Interface;
+﻿using Api.MeetingRoom.Business.CustomException;
+using Api.MeetingRoom.Business.Interface;
 using Api.MeetingRoom.Domain;
 using Api.MeetingRoom.Domain.Enum;
 using Api.MeetingRoom.Repository.Interface;
@@ -19,6 +20,7 @@ namespace Api.MeetingRoom.Business
         public async Task<MeetingRoomSchedulingModel> PostMeetingRommScheduling(MeetingRoomSchedulingModel meetingRomm)
         {
             await CheckIfMeetingRoomSchedulingExists(meetingRomm.Date, meetingRomm.Number, meetingRomm.Hour);
+            await CheckIfIsValidHour(meetingRomm.Hour);
 
             try
             {
@@ -26,7 +28,7 @@ namespace Api.MeetingRoom.Business
             }
             catch (Exception)
             {
-                throw new Exception("Não foi possivel reservar a sala");
+                throw new BusinessException("Não foi possivel reservar a sala");
             }
         }
         public async Task<IEnumerable<MeetingRoomSchedulingModel>> GetAllMeetingRommScheduling(int page, int pageSize)
@@ -37,7 +39,7 @@ namespace Api.MeetingRoom.Business
             }
             catch (Exception)
             {
-                throw new Exception("Não foi possivel recuperar as reservas");
+                throw new BusinessException("Não foi possivel recuperar as reservas");
             }
         }
 
@@ -49,7 +51,7 @@ namespace Api.MeetingRoom.Business
             }
             catch (Exception)
             {
-                throw new Exception("Não foi recupera a reserva");
+                throw new BusinessException("Não foi recupera a reserva");
             }
         }
 
@@ -61,13 +63,14 @@ namespace Api.MeetingRoom.Business
             }
             catch (Exception)
             {
-                throw new Exception("Não foi recuperar a quantidade de reservas");
+                throw new BusinessException("Não foi recuperar a quantidade de reservas");
             }
         }
 
         public async Task<MeetingRoomSchedulingModel> PutMeetingRommScheduling(int id, MeetingRoomSchedulingModel meetingRomm)
         {
             await CheckIfMeetingRoomSchedulingExists(meetingRomm.Date, meetingRomm.Number, meetingRomm.Hour);
+            await CheckIfIsValidHour(meetingRomm.Hour);
 
             try
             {
@@ -75,7 +78,7 @@ namespace Api.MeetingRoom.Business
             }
             catch (Exception)
             {
-                throw new Exception("Não foi atualizar a reserva");
+                throw new BusinessException("Não foi atualizar a reserva");
             }
         }
 
@@ -87,7 +90,7 @@ namespace Api.MeetingRoom.Business
             }
             catch (Exception)
             {
-                throw new Exception("Não foi deletar a reserva");
+                throw new BusinessException("Não foi deletar a reserva");
             }
         }
 
@@ -96,7 +99,13 @@ namespace Api.MeetingRoom.Business
             var meetingRoomScheduling = await _meetingRoomSchedulingRepository.GetMeetingRoomSchedulingByDateAndHourAndNumber(date, numer, Hour);
 
             if (meetingRoomScheduling != null)
-                throw new Exception("Já existe uma reserva nesta sala");
+                throw new BusinessException("Já existe uma reserva nesta sala");
+        }
+
+        private async Task CheckIfIsValidHour(RangeOfHoursEnum Hour)
+        {
+            if ((int)Hour < 8 || (int)Hour > 18)
+                throw new BusinessException("Hora da reunião fora do horário comercial");
         }
     }
 }

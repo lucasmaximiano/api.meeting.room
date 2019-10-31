@@ -1,8 +1,10 @@
-﻿using Api.MeetingRoom.Business.Interface;
+﻿using Api.MeetingRoom.Business.CustomException;
+using Api.MeetingRoom.Business.Interface;
 using Api.MeetingRoom.Domain;
 using Api.MeetingRoom.Repository.Interface;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Api.MeetingRoom.Business
@@ -10,10 +12,13 @@ namespace Api.MeetingRoom.Business
     public class MeetingRoomBusiness : IMeetingRoomBusiness
     {
         private readonly IMeetingRoomRepository _meetingRoomRepository;
-        public MeetingRoomBusiness(IMeetingRoomRepository meetingRoomRepository)
+        private readonly IMeetingRoomSchedulingRepository _meetingRoomSchedulingRepository;
+        public MeetingRoomBusiness(IMeetingRoomRepository meetingRoomRepository, 
+            IMeetingRoomSchedulingRepository meetingRoomSchedulingRepository)
         {
             _meetingRoomRepository = meetingRoomRepository;
-        }
+            _meetingRoomSchedulingRepository = meetingRoomSchedulingRepository;
+    }
 
         public async Task<MeetingRommModel> PostMeetingRomm(MeetingRommModel meetingRomm)
         {
@@ -25,7 +30,7 @@ namespace Api.MeetingRoom.Business
             }
             catch (Exception)
             {
-                throw new Exception("Não foi possível criar o nova sala de reunião");
+                throw new BusinessException("Não foi possível criar o nova sala de reunião");
             }
         }
 
@@ -37,9 +42,38 @@ namespace Api.MeetingRoom.Business
             }
             catch (Exception)
             {
-                throw new Exception("Não foi recuperar as salas de reunião");
+                throw new BusinessException("Não foi recuperar as salas de reunião");
             }
         }
+
+        public async Task<IEnumerable<ReserveModel>> GetAllReserve(int page, int pageSize)
+        {
+            try
+            {
+                var reserveList = new List<ReserveModel>();
+
+                var allMettingRoom = await _meetingRoomRepository.GetAllMeetingRomm();
+
+                foreach (var mettingRoom in allMettingRoom)
+                {
+                    var reserve = new ReserveModel
+                    {
+                        MeetingRomm = mettingRoom,
+                        MeetingRoomScheduling = await _meetingRoomSchedulingRepository.GetMeetingRoomSchedulingByNumber(mettingRoom.Number)
+                    };
+
+                    reserveList.Add(reserve);
+                }
+
+                var skip = (page - 1) * pageSize;
+                return reserveList.Skip(skip).Take(pageSize).ToList();
+            }
+            catch (Exception)
+            {
+                throw new BusinessException("Não foi recuperar as salas de reunião com suas reservas");
+            }
+        }
+
 
         public async Task<MeetingRommModel> GetMeetingRoomById(int id)
         {
@@ -49,7 +83,7 @@ namespace Api.MeetingRoom.Business
             }
             catch (Exception)
             {
-                throw new Exception("Não foi recupera a sala de reunião");
+                throw new BusinessException("Não foi recupera a sala de reunião");
             }
         }
 
@@ -61,7 +95,7 @@ namespace Api.MeetingRoom.Business
             }
             catch (Exception)
             {
-                throw new Exception("Não foi recuperar a quantidade de salas de reunião");
+                throw new BusinessException("Não foi recuperar a quantidade de salas de reunião");
             }
         }
 
@@ -75,7 +109,7 @@ namespace Api.MeetingRoom.Business
             }
             catch (Exception)
             {
-                throw new Exception("Não foi atualizar a sala de reunião");
+                throw new BusinessException("Não foi atualizar a sala de reunião");
             }
         }
 
@@ -87,7 +121,7 @@ namespace Api.MeetingRoom.Business
             }
             catch (Exception)
             {
-                throw new Exception("Não foi deletar a sala de reunião");
+                throw new BusinessException("Não foi deletar a sala de reunião");
             }
         }
 
@@ -98,8 +132,9 @@ namespace Api.MeetingRoom.Business
 
             if (mettingRomm != null)
                 if (id == null || id != mettingRomm.Id)
-                    throw new Exception("Já existe uma sala de reunião com esse numero");
+                    throw new BusinessException("Já existe uma sala de reunião com esse numero");
         }
 
+       
     }
 }

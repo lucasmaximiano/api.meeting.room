@@ -81,6 +81,9 @@ namespace Api.MeetingRoom.Repository
             await _context.SaveChangesAsync();
         }
 
-     
+        public async Task<IEnumerable<MeetingRoomSchedulingModel>> GetMeetingRoomSchedulingByNumber(int number)
+        {
+            return await _context.MeetingRoomScheduling.Where(a => a.Number.Equals(number)).ToListAsync();
+        }
     }
 }

@@ -48,7 +48,7 @@ namespace Api.MeetingRoom.Controllers
         [SwaggerResponse(HttpStatusCode.Unauthorized, "Erro de Autenticação", null)]
         [SwaggerResponse(HttpStatusCode.Conflict, "Conflito", null)]
         [SwaggerResponse(HttpStatusCode.InternalServerError, "Erro na API", null)]
-        public async Task<IActionResult> PostMeetingRommScheduling([FromBody]MeetingRoomSchedulingDTO meetiingRommScheduling)
+        public async Task<IActionResult> Post([FromBody]MeetingRoomSchedulingDTO meetiingRommScheduling)
         {
             var meetingRommScheduling = _mapper.Map<MeetingRoomSchedulingModel>(meetiingRommScheduling);
             var newMeetingRommScheduling = await _meetingRoomSchedulingBusiness.PostMeetingRommScheduling(meetingRommScheduling);
@@ -65,7 +65,7 @@ namespace Api.MeetingRoom.Controllers
         [SwaggerResponse(HttpStatusCode.Unauthorized, "Erro de Autenticação", null)]
         [SwaggerResponse(HttpStatusCode.NotFound, "Recurso não encontrado", null)]
         [SwaggerResponse(HttpStatusCode.InternalServerError, "Erro na API", null)]
-        public async Task<IActionResult> GetAllMeetingRommScheduling([FromQuery] PaginationDTO pagination)
+        public async Task<IActionResult> Get([FromQuery] PaginationDTO pagination)
         {
             var meetingRommScheduling = await _meetingRoomSchedulingBusiness.GetAllMeetingRommScheduling(pagination.Page, pagination.PageSize);
             var count = await _meetingRoomSchedulingBusiness.GetAllMeetingRommSchedulingCount();
@@ -114,7 +114,7 @@ namespace Api.MeetingRoom.Controllers
         [SwaggerResponse(HttpStatusCode.Unauthorized, "Erro de Autenticação", null)]
         [SwaggerResponse(HttpStatusCode.Conflict, "Conflito", null)]
         [SwaggerResponse(HttpStatusCode.InternalServerError, "Erro na API", null)]
-        public async Task<IActionResult> PutMeetingRommScheduling(int id, [FromBody]MeetingRoomSchedulingDTO meetiingRomm)
+        public async Task<IActionResult> Put(int id, [FromBody]MeetingRoomSchedulingDTO meetiingRomm)
         {
             var meetingRommScheduling = _mapper.Map<MeetingRoomSchedulingModel>(meetiingRomm);
             var newMeetingRommScheduling = await _meetingRoomSchedulingBusiness.PutMeetingRommScheduling(id, meetingRommScheduling);
@@ -131,7 +131,7 @@ namespace Api.MeetingRoom.Controllers
         [SwaggerResponse(HttpStatusCode.Unauthorized, "Erro de Autenticação", null)]
         [SwaggerResponse(HttpStatusCode.NotFound, "Recurso não encontrado", null)]
         [SwaggerResponse(HttpStatusCode.InternalServerError, "Erro na API", null)]
-        public async Task<IActionResult> DeleteMeetingRoomScheduling(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             await _meetingRoomSchedulingBusiness.DeleteMeetingRoomScheduling(id);
             return Ok();

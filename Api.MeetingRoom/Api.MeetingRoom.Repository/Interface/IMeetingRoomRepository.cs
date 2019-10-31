@@ -10,6 +10,7 @@ namespace Api.MeetingRoom.Repository.Interface
     {
         Task<MeetingRommModel> PostMeetingRomm(MeetingRommModel meetingRomm);
         Task<IEnumerable<MeetingRommModel>> GetAllMeetingRomm(int page, int pageSize);
+        Task<IEnumerable<MeetingRommModel>> GetAllMeetingRomm();
         Task<MeetingRommModel> GetMeetingRoomById(int id);
         Task<MeetingRommModel> GetMeetingRoomByNumer(int number);
         Task<int> GetAllMeetingRommCount();

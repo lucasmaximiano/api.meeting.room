@@ -11,6 +11,7 @@ namespace Api.MeetingRoom.Repository.Interface
         Task<MeetingRoomSchedulingModel> PostMeetingRommScheduling(MeetingRoomSchedulingModel meetingRomm);
         Task<IEnumerable<MeetingRoomSchedulingModel>> GetAllMeetingRommScheduling(int page, int pageSize);
         Task<MeetingRoomSchedulingModel> GetMeetingRoomSchedulingById(int id);
+        Task<IEnumerable<MeetingRoomSchedulingModel>> GetMeetingRoomSchedulingByNumber(int number);
         Task<int> GetAllMeetingRommSchedulingCount();
         Task<MeetingRoomSchedulingModel> GetMeetingRoomSchedulingByDateAndHourAndNumber(DateTime date, int number, RangeOfHoursEnum Hour);
         Task<MeetingRoomSchedulingModel> PutMeetingRommScheduling(int id, MeetingRoomSchedulingModel meetingRomm);
