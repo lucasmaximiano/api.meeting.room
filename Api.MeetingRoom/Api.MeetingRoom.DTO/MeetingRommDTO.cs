@@ -2,7 +2,7 @@
 
 namespace Api.MeetingRoom.DTO
 {
-    public class MeetiingRommDTO
+    public class MeetingRommDTO
     {
         [Required(ErrorMessage = "O nome da sala é um campo obrigatório")]
         public string Name { get; set; }

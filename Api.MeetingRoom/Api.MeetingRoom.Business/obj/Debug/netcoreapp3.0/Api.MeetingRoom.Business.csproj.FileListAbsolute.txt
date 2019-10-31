@@ -1,0 +1,13 @@
+C:\GitHub\api.meeting.room\Api.MeetingRoom\Api.MeetingRoom.Business\bin\Debug\netcoreapp3.0\Api.MeetingRoom.Business.deps.json
+C:\GitHub\api.meeting.room\Api.MeetingRoom\Api.MeetingRoom.Business\bin\Debug\netcoreapp3.0\Api.MeetingRoom.Business.dll
+C:\GitHub\api.meeting.room\Api.MeetingRoom\Api.MeetingRoom.Business\bin\Debug\netcoreapp3.0\Api.MeetingRoom.Business.pdb
+C:\GitHub\api.meeting.room\Api.MeetingRoom\Api.MeetingRoom.Business\bin\Debug\netcoreapp3.0\Api.MeetingRoom.Domain.dll
+C:\GitHub\api.meeting.room\Api.MeetingRoom\Api.MeetingRoom.Business\bin\Debug\netcoreapp3.0\Api.MeetingRoom.Repository.dll
+C:\GitHub\api.meeting.room\Api.MeetingRoom\Api.MeetingRoom.Business\bin\Debug\netcoreapp3.0\Api.MeetingRoom.Domain.pdb
+C:\GitHub\api.meeting.room\Api.MeetingRoom\Api.MeetingRoom.Business\bin\Debug\netcoreapp3.0\Api.MeetingRoom.Repository.pdb
+C:\GitHub\api.meeting.room\Api.MeetingRoom\Api.MeetingRoom.Business\obj\Debug\netcoreapp3.0\Api.MeetingRoom.Business.csprojAssemblyReference.cache
+C:\GitHub\api.meeting.room\Api.MeetingRoom\Api.MeetingRoom.Business\obj\Debug\netcoreapp3.0\Api.MeetingRoom.Business.AssemblyInfoInputs.cache
+C:\GitHub\api.meeting.room\Api.MeetingRoom\Api.MeetingRoom.Business\obj\Debug\netcoreapp3.0\Api.MeetingRoom.Business.AssemblyInfo.cs
+C:\GitHub\api.meeting.room\Api.MeetingRoom\Api.MeetingRoom.Business\obj\Debug\netcoreapp3.0\Api.MeetingRoom.Business.csproj.CopyComplete
+C:\GitHub\api.meeting.room\Api.MeetingRoom\Api.MeetingRoom.Business\obj\Debug\netcoreapp3.0\Api.MeetingRoom.Business.dll
+C:\GitHub\api.meeting.room\Api.MeetingRoom\Api.MeetingRoom.Business\obj\Debug\netcoreapp3.0\Api.MeetingRoom.Business.pdb

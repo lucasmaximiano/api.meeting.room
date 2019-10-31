@@ -99,7 +99,7 @@ namespace Api.MeetingRoom.Test
         public async Task PostMeetingRoomWithSucess()
         {
 
-            var meetingRoom = new MeetiingRommDTO
+            var meetingRoom = new MeetingRommDTO
             {
                 Name = "Las Vegas",
                 Number = 1
@@ -117,7 +117,7 @@ namespace Api.MeetingRoom.Test
         [Test]
         public async Task PostMeetingRoomWithoutNameAndBadRequest()
         {
-            var meetingRoom = new MeetiingRommDTO
+            var meetingRoom = new MeetingRommDTO
             {
                 Name = null,
                 Number = 1
@@ -138,7 +138,7 @@ namespace Api.MeetingRoom.Test
         public async Task PostMeetingRoomWithoutNumberAndBadRequest()
         {
 
-            var meetingRoom = new MeetiingRommDTO
+            var meetingRoom = new MeetingRommDTO
             {
                 Name = "Dalas"
             };
@@ -160,7 +160,7 @@ namespace Api.MeetingRoom.Test
         public async Task PutMeetingRoomWithSucess(int id)
         {
 
-            var meetingRoom = new MeetiingRommDTO
+            var meetingRoom = new MeetingRommDTO
             {
                 Name = "Las Vegas",
                 Number = 1,
@@ -178,7 +178,7 @@ namespace Api.MeetingRoom.Test
         [TestCase(1)]
         public async Task PutMeetingRoomWithoutNameAndBadRequest(int id)
         {
-            var meetingRoom = new MeetiingRommDTO
+            var meetingRoom = new MeetingRommDTO
             {
                 Name = null,
                 Number = 1
@@ -199,7 +199,7 @@ namespace Api.MeetingRoom.Test
         public async Task PutMeetingRoomWithoutNumberAndBadRequest(int id)
         {
 
-            var meetingRoom = new MeetiingRommDTO
+            var meetingRoom = new MeetingRommDTO
             {
                 Name = "Dalas"
             };

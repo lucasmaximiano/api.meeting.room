@@ -1,6 +1,6 @@
 ﻿namespace Api.MeetingRoom.DTO
 {
-    public enum RangeOfHoursEnumDTO
+    public enum RangeOfHoursEnum
     {
         EightOclockAM = 8,
         NinetOclockAM = 9,

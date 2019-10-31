@@ -2,15 +2,18 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Api.MeetingRoom.Repository.Interface
 {
     public interface IMeetingRoomRepository
     {
-        MeetingRommModel PostMeetingRomm(MeetingRommModel meetingRomm);
-        IEnumerable<MeetingRommModel> GetAllMeetingRomm(int page, int pageSize);
-        MeetingRommModel GetMeetingRoomById(int id);
-        MeetingRommModel PutMeetingRomm(MeetingRommModel meetingRomm);
-        void DeleteMeetingRoom(int id);
+        Task<MeetingRommModel> PostMeetingRomm(MeetingRommModel meetingRomm);
+        Task<IEnumerable<MeetingRommModel>> GetAllMeetingRomm(int page, int pageSize);
+        Task<MeetingRommModel> GetMeetingRoomById(int id);
+        Task<MeetingRommModel> GetMeetingRoomByNumer(int number);
+        Task<int> GetAllMeetingRommCount();
+        Task<MeetingRommModel> PutMeetingRomm(int id, MeetingRommModel meetingRomm);
+        Task DeleteMeetingRoom(int id);
     }
 }

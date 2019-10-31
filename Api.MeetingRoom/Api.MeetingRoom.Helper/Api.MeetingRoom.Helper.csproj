@@ -5,4 +5,8 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Api.MeetingRoom.DTO\Api.MeetingRoom.DTO.csproj" />
+  </ItemGroup>
+
 </Project>

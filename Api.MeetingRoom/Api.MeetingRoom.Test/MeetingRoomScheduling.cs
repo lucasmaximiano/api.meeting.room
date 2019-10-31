@@ -105,7 +105,7 @@ namespace Api.MeetingRoom.Test
             {
                 Number = 1,
                 Date = DateTime.UtcNow,
-                Hour = RangeOfHoursEnumDTO.EightOclockAM
+                Hour = RangeOfHoursEnum.EightOclockAM
             };
 
             var json = new StringContent(JsonConvert.SerializeObject(meetingRoomScheduling));
@@ -125,7 +125,7 @@ namespace Api.MeetingRoom.Test
             var meetingRoomScheduling = new MeetingRoomSchedulingDTO
             {
                 Date = DateTime.UtcNow,
-                Hour = RangeOfHoursEnumDTO.NinetOclockAM
+                Hour = RangeOfHoursEnum.NinetOclockAM
             };
 
             var json = new StringContent(JsonConvert.SerializeObject(meetingRoomScheduling));
@@ -145,7 +145,7 @@ namespace Api.MeetingRoom.Test
             var meetingRoomScheduling = new MeetingRoomSchedulingDTO
             {
                 Number = 2,
-                Hour = RangeOfHoursEnumDTO.TenOclockAM
+                Hour = RangeOfHoursEnum.TenOclockAM
             };
 
             var json = new StringContent(JsonConvert.SerializeObject(meetingRoomScheduling));
@@ -188,7 +188,7 @@ namespace Api.MeetingRoom.Test
             {
                 Number = 1,
                 Date = DateTime.UtcNow,
-                Hour = RangeOfHoursEnumDTO.EightOclockAM
+                Hour = RangeOfHoursEnum.EightOclockAM
             };
 
             var json = new StringContent(JsonConvert.SerializeObject(meetingRoomScheduling));
@@ -208,7 +208,7 @@ namespace Api.MeetingRoom.Test
             var meetingRoomScheduling = new MeetingRoomSchedulingDTO
             {
                 Date = DateTime.UtcNow,
-                Hour = RangeOfHoursEnumDTO.NinetOclockAM
+                Hour = RangeOfHoursEnum.NinetOclockAM
             };
 
             var json = new StringContent(JsonConvert.SerializeObject(meetingRoomScheduling));
@@ -229,7 +229,7 @@ namespace Api.MeetingRoom.Test
             var meetingRoomScheduling = new MeetingRoomSchedulingDTO
             {
                 Number = 2,
-                Hour = RangeOfHoursEnumDTO.TenOclockAM
+                Hour = RangeOfHoursEnum.TenOclockAM
             };
 
             var json = new StringContent(JsonConvert.SerializeObject(meetingRoomScheduling));

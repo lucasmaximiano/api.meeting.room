@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Api.MeetingRoom</name>
+    </assembly>
+    <members>
+        <member name="T:Api.MeetingRoom.Controllers.BaseController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Api.MeetingRoom.Controllers.BaseController._mapper">
+            <summary>
+            AutoMapper
+            </summary>
+        </member>
+        <member name="M:Api.MeetingRoom.Controllers.BaseController.#ctor(AutoMapper.IMapper)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:Api.MeetingRoom.Controllers.BaseController.GetPagination(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="count"></param>
+            <param name="page"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Api.MeetingRoom.Controllers.MeetingRoomController">
+            <summary>
+            MeetingRoomController
+            </summary>
+        </member>
+        <member name="F:Api.MeetingRoom.Controllers.MeetingRoomController._mapper">
+            <summary>
+            AutoMapper
+            </summary>
+        </member>
+        <member name="M:Api.MeetingRoom.Controllers.MeetingRoomController.#ctor(Api.MeetingRoom.Business.Interface.IMeetingRoomBusiness,AutoMapper.IMapper)">
+            <summary>
+            MeetingRoomController
+            </summary>
+            <param name="meetingRoomBusiness"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:Api.MeetingRoom.Controllers.MeetingRoomController.PostMeetingRomm(Api.MeetingRoom.DTO.MeetingRommDTO)">
+            <summary>
+            Insere uma sala
+            </summary>
+            <param name="meetiingRomm">Objeto de entrada de dados</param>
+        </member>
+        <member name="M:Api.MeetingRoom.Controllers.MeetingRoomController.GetAllMeetingRomm(Api.MeetingRoom.DTO.PaginationDTO)">
+            <summary>
+            Retorna todas as salas de acordo com seus filtros
+            </summary>
+            <param name="pagination">Paginação</param>
+        </member>
+        <member name="M:Api.MeetingRoom.Controllers.MeetingRoomController.GetMeetingRoomById(System.Int32)">
+            <summary>
+            Retorna a sala pelo seu id
+            </summary>
+            <param name="id">Id da sala</param>
+        </member>
+        <member name="M:Api.MeetingRoom.Controllers.MeetingRoomController.PutMeetingRomm(System.Int32,Api.MeetingRoom.DTO.MeetingRommDTO)">
+            <summary>
+            Atualiza uma sala pelo seu id
+            </summary>
+            <param name="id">Id da sala</param>
+            <param name="meetiingRomm">Objeto de entrada de dados</param>
+        </member>
+        <member name="M:Api.MeetingRoom.Controllers.MeetingRoomController.DeleteMeetingRoom(System.Int32)">
+            <summary>
+            Dela uma sala pelo seu id
+            </summary>
+            <param name="id">Id da sala</param>
+        </member>
+        <member name="T:Api.MeetingRoom.Controllers.MeetingRoomSchedulingController">
+            <summary>
+            MeetingRoomSchedulingController
+            </summary>
+        </member>
+        <member name="F:Api.MeetingRoom.Controllers.MeetingRoomSchedulingController._mapper">
+            <summary>
+            AutoMapper
+            </summary>
+        </member>
+        <member name="M:Api.MeetingRoom.Controllers.MeetingRoomSchedulingController.#ctor(Api.MeetingRoom.Business.Interface.IMeetingRoomSchedulingBusiness,AutoMapper.IMapper)">
+            <summary>
+            MeetingRoomSchedulingController
+            </summary>
+            <param name="meetingRoomSchedulingBusiness"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:Api.MeetingRoom.Controllers.MeetingRoomSchedulingController.PostMeetingRommScheduling(Api.MeetingRoom.DTO.MeetingRoomSchedulingDTO)">
+            <summary>
+            Insere uma reserva
+            </summary>
+            <param name="meetiingRommScheduling">Obeto de entrada de dados</param>
+        </member>
+        <member name="M:Api.MeetingRoom.Controllers.MeetingRoomSchedulingController.GetAllMeetingRommScheduling(Api.MeetingRoom.DTO.PaginationDTO)">
+            <summary>
+            Retorna todas reservas de acordo com seus filtros
+            </summary>
+            <param name="pagination">Paginação</param>
+        </member>
+        <member name="M:Api.MeetingRoom.Controllers.MeetingRoomSchedulingController.GetMeetingRoomSchedulingById(System.Int32)">
+            <summary>
+            Retorna uma reserva pelo seu id
+            </summary>
+            <param name="id">Id da reserva</param>
+        </member>
+        <member name="M:Api.MeetingRoom.Controllers.MeetingRoomSchedulingController.PutMeetingRommScheduling(System.Int32,Api.MeetingRoom.DTO.MeetingRoomSchedulingDTO)">
+            <summary>
+            Atualizar uma reserva pelo seu id
+            </summary>
+            <param name="id">Id da reserva</param>
+            <param name="meetiingRomm">Objeto de entrada de dados</param>
+        </member>
+        <member name="M:Api.MeetingRoom.Controllers.MeetingRoomSchedulingController.DeleteMeetingRoomScheduling(System.Int32)">
+            <summary>
+            Deleta uma reserva pelo seu id
+            </summary>
+            <param name="id">Id da reserva</param>
+        </member>
+        <member name="T:Api.MeetingRoom.Mappers.MappingProfile">
+            <summary>
+            MappingProfiles
+            </summary>
+        </member>
+        <member name="M:Api.MeetingRoom.Mappers.MappingProfile.#ctor">
+            <summary>
+            MappingProfile
+            </summary>
+        </member>
+        <member name="T:Api.MeetingRoom.Program">
+            <summary>
+            Program
+            </summary>
+        </member>
+        <member name="M:Api.MeetingRoom.Program.Main(System.String[])">
+            <summary>
+            Main
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:Api.MeetingRoom.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            CreateHostBuilder
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Api.MeetingRoom.Startup">
+            <summary>
+            Startup
+            </summary>
+        </member>
+        <member name="M:Api.MeetingRoom.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Startup
+            </summary>
+        </member>
+        <member name="P:Api.MeetingRoom.Startup.Configuration">
+            <summary>
+            Configuration
+            </summary>
+        </member>
+        <member name="M:Api.MeetingRoom.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            ConfigureServices
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:Api.MeetingRoom.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment,System.IServiceProvider)">
+            <summary>
+            Configure
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+            <param name="serviceProvider"></param>
+        </member>
+    </members>
+</doc>

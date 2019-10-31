@@ -10,6 +10,6 @@ namespace Api.MeetingRoom.DTO
         [Required(ErrorMessage = "A data da reunião é um campo")]
         public DateTime Date { get; set; }
         [Required(ErrorMessage = "A hora da reunião é um campo")]
-        public RangeOfHoursEnumDTO Hour { get; set; }
+        public RangeOfHoursEnum Hour { get; set; }
     }
 }
