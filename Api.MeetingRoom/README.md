@@ -3,7 +3,7 @@
 - Você vai precisar do Visual Studio 2019 e a ultima versão do .NET Core SDK.
 - Você vai precisar do MYSQL
 - Você vai precisar criar o banco 'meeting_room'
-- Você vai precisar executar o script SQL disponibilizado
+- Você vai precisar executar o script SQL disponibilizado 'table-scripts.sql'
 - Você vai precisar abrir o seu navegador e acessar a url http://localhost:5000/docs
 
 
