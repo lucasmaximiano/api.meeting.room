@@ -359,7 +359,7 @@
           "build/netstandard1.0/Microsoft.CodeCoverage.targets": {}
         }
       },
-      "Microsoft.CSharp/4.6.0-preview3.19128.7": {
+      "Microsoft.CSharp/4.6.0": {
         "type": "package",
         "compile": {
           "ref/netcoreapp2.0/_._": {}
@@ -438,6 +438,22 @@
       "Microsoft.EntityFrameworkCore.Analyzers/3.0.0": {
         "type": "package"
       },
+      "Microsoft.EntityFrameworkCore.Design/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.6.0",
+          "Microsoft.EntityFrameworkCore.Relational": "3.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Design.dll": {}
+        },
+        "build": {
+          "build/netcoreapp2.0/Microsoft.EntityFrameworkCore.Design.props": {}
+        }
+      },
       "Microsoft.EntityFrameworkCore.Relational/3.0.0": {
         "type": "package",
         "dependencies": {
@@ -461,6 +477,18 @@
         },
         "runtime": {
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.Design.dll": {}
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Tools/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": "3.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/_._": {}
         }
       },
       "Microsoft.Extensions.Caching.Abstractions/3.0.0": {
@@ -1000,6 +1028,15 @@
             "assetType": "runtime",
             "rid": "win"
           }
+        }
+      },
+      "MSharp.Framework/4.0.105": {
+        "type": "package",
+        "compile": {
+          "lib/net45/MSharp.Framework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MSharp.Framework.dll": {}
         }
       },
       "MySqlConnector/0.59.2": {
@@ -2602,10 +2639,10 @@
         "microsoft.codecoverage.nuspec"
       ]
     },
-    "Microsoft.CSharp/4.6.0-preview3.19128.7": {
-      "sha512": "9yECMX2xrjv0+4CNKxB8BwgMu8q7q7pu6UdlGhYQcbuPaFyy/eBzCeIzC/5oYBIqHReUHracsVrL7hrwnbjoMg==",
+    "Microsoft.CSharp/4.6.0": {
+      "sha512": "kxn3M2rnAGy5N5DgcIwcE8QTePWU/XiYcQVzn9HqTls2NKluVzVSmVWRjK7OUPWbljCXuZxHyhEz9kPRIQeXow==",
       "type": "package",
-      "path": "microsoft.csharp/4.6.0-preview3.19128.7",
+      "path": "microsoft.csharp/4.6.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2628,7 +2665,7 @@
         "lib/xamarinmac20/_._",
         "lib/xamarintvos10/_._",
         "lib/xamarinwatchos10/_._",
-        "microsoft.csharp.4.6.0-preview3.19128.7.nupkg.sha512",
+        "microsoft.csharp.4.6.0.nupkg.sha512",
         "microsoft.csharp.nuspec",
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
@@ -2737,6 +2774,21 @@
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
+    "Microsoft.EntityFrameworkCore.Design/3.0.0": {
+      "sha512": "rOV5eClv+dq09htWNHv56y7TYZVAbLc6O+09ljg2FfSUsvlOJDsWHBLqAUofevZ2QxHTTZlAJLZkZGEBC6gUww==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.design/3.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/net461/Microsoft.EntityFrameworkCore.Design.props",
+        "build/netcoreapp2.0/Microsoft.EntityFrameworkCore.Design.props",
+        "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Design.dll",
+        "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Design.xml",
+        "microsoft.entityframeworkcore.design.3.0.0.nupkg.sha512",
+        "microsoft.entityframeworkcore.design.nuspec"
+      ]
+    },
     "Microsoft.EntityFrameworkCore.Relational/3.0.0": {
       "sha512": "lODmNpgEvFXcEIIxIr2KvkHT5x9Gqc69To0r6HYcwKXWJz71qP6yZ7h1ynM0aooTT4ggIVADJL9PJ0RLYdhYqA==",
       "type": "package",
@@ -2763,6 +2815,29 @@
         "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.Design.xml",
         "microsoft.entityframeworkcore.relational.design.1.1.1.nupkg.sha512",
         "microsoft.entityframeworkcore.relational.design.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.Tools/3.0.0": {
+      "sha512": "r+jFe/34rAIf6RfVHbjJ+uYKzTULuZuIAFfJRdkNgDQu8w844Qy+kvqbc0qZKt92Hrka4V8RZJNKM54/s2gZ1g==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.tools/3.0.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.1/_._",
+        "microsoft.entityframeworkcore.tools.3.0.0.nupkg.sha512",
+        "microsoft.entityframeworkcore.tools.nuspec",
+        "tools/EntityFrameworkCore.PS2.psd1",
+        "tools/EntityFrameworkCore.PS2.psm1",
+        "tools/EntityFrameworkCore.psd1",
+        "tools/EntityFrameworkCore.psm1",
+        "tools/about_EntityFrameworkCore.help.txt",
+        "tools/init.ps1",
+        "tools/net461/any/ef.exe",
+        "tools/net461/win-x86/ef.exe",
+        "tools/netcoreapp2.0/any/ef.dll",
+        "tools/netcoreapp2.0/any/ef.runtimeconfig.json"
       ]
     },
     "Microsoft.Extensions.Caching.Abstractions/3.0.0": {
@@ -3379,6 +3454,94 @@
         "runtimes/win/lib/net46/Microsoft.Win32.Registry.dll",
         "runtimes/win/lib/netcore50/_._",
         "runtimes/win/lib/netstandard1.3/Microsoft.Win32.Registry.dll"
+      ]
+    },
+    "MSharp.Framework/4.0.105": {
+      "sha512": "iJ/n0lWgNlHEfb+n1Ex/OCLgQsMBU4+Ggla5NzaEcmY4WZXeRZyUxWIkIw+xZ9g/Db0WsvBcNjDEgAZ2pDPmIA==",
+      "type": "package",
+      "path": "msharp.framework/4.0.105",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/MSharp.Framework.XML",
+        "lib/net45/MSharp.Framework.dll",
+        "lib/net45/MSharp.Framework.pdb",
+        "msharp.framework.4.0.105.nupkg.sha512",
+        "msharp.framework.nuspec",
+        "src/Data/API/SessionMemoryAccessor.cs",
+        "src/Data/Ado.Net/DataProvider.cs",
+        "src/Entity/Auditing/DefaultApplicationEventManager.cs",
+        "src/MSharp.Framework.csproj",
+        "src/MSharp.Framework.snk",
+        "src/Properties/AssemblyInfo.cs",
+        "src/Services/Authentication/FormsAuthenticationProvider.cs",
+        "src/Services/Authentication/IAuthenticationProvider.cs",
+        "src/Services/Authentication/ImpersonationSession.cs",
+        "src/Services/Authentication/IpFilter.cs",
+        "src/Services/Authentication/UserServices.cs",
+        "src/Services/Context/DefaultContextParameterValueProvider.cs",
+        "src/Services/Context/DefaultServiceProvider.cs",
+        "src/Services/Context/HttpContextItemsAccessor.cs",
+        "src/Services/Context/UserAccessor.cs",
+        "src/Services/Dynamic.Expressions/Compiler.cs",
+        "src/Services/Dynamic.Expressions/DynamicExpressionsCompiler.cs",
+        "src/Services/Email.Sending/EmailServiceConfigurator.cs",
+        "src/Services/ExcelExport/ExcelFormulaFilter.cs",
+        "src/Services/Globalization/CookiePropertyHelper.cs",
+        "src/Services/Rss/IRssItem.cs",
+        "src/Services/Rss/RssChannel.cs",
+        "src/Services/Rss/RssServer.cs",
+        "src/Services/System/ProcessContextAccessor.cs",
+        "src/Services/Testing/Snapshot.cs",
+        "src/System.Extensions/@Misc.cs",
+        "src/System.Extensions/Exception.cs",
+        "src/System.Extensions/Linq.cs",
+        "src/System.Extensions/Reflection.cs",
+        "src/System.Extensions/SmtpClient.cs",
+        "src/UI/Controls/AutoComplete.cs",
+        "src/UI/Controls/CollapsibleCheckBoxList.cs",
+        "src/UI/Controls/HoverButton.cs",
+        "src/UI/Controls/NumericUpDown.cs",
+        "src/UI/Framework/AfterClose.cs",
+        "src/UI/Framework/BaseHttpApplication.cs",
+        "src/UI/Framework/EmailTestService.cs",
+        "src/UI/Framework/HttpApplication.cs",
+        "src/UI/Framework/ListContainer.cs",
+        "src/UI/Framework/MasterPage.cs",
+        "src/UI/Framework/MessageBoxManager.cs",
+        "src/UI/Framework/Page.cs",
+        "src/UI/Framework/Regex.cs",
+        "src/UI/Framework/UserControl.cs",
+        "src/UI/LazyLoading/LazyLoader.cs",
+        "src/UI/LazyLoading/LazyModule.cs",
+        "src/UI/Services/AjaxScriptManagerCombinedScriptProvider.cs",
+        "src/UI/Services/JavascriptVariable.cs",
+        "src/UI/Services/MenuItemPageMapping.cs",
+        "src/UI/Services/SortExpressionProperty.cs",
+        "src/UI/SystemExtensions/Common.cs",
+        "src/UI/SystemExtensions/Control.cs",
+        "src/UI/SystemExtensions/Http.cs",
+        "src/UI/SystemExtensions/ListItemCollection.cs",
+        "src/UI/SystemExtensions/TreeView.cs",
+        "src/UI/UrlRewriting/IWebResource.cs",
+        "src/UI/UrlRewriting/UrlRewriting.cs",
+        "src/UI/Web/CookieProperty.cs",
+        "src/UI/Web/HttpContextCache.cs",
+        "src/UI/Web/IWebRequestLog.cs",
+        "src/UI/Web/SecureFileDispatcher.cs",
+        "src/UI/Web/WebCapture.cs",
+        "src/UI/Web/WebRequestLogService.cs",
+        "src/UI/WebTesting/DatabaseChangeWatcher.cs",
+        "src/UI/WebTesting/WebTestManager.cs",
+        "src/WebRequestHandler.cs",
+        "src/app.config",
+        "src/obj/Debug/MSharp.Framework.csproj.CopyComplete",
+        "src/obj/Debug/MSharp.Framework.csproj.CoreCompileInputs.cache",
+        "src/obj/Debug/MSharp.Framework.csproj.FileListAbsolute.txt",
+        "src/obj/Debug/MSharp.Framework.csprojAssemblyReference.cache",
+        "src/obj/Debug/MSharp.Framework.dll",
+        "src/obj/Debug/MSharp.Framework.pdb",
+        "src/packages.config"
       ]
     },
     "MySqlConnector/0.59.2": {
@@ -7026,9 +7189,13 @@
     ".NETCoreApp,Version=v3.0": [
       "Api.MeetingRoom >= 1.0.0",
       "Api.MeetingRoom.DTO >= 1.0.0",
+      "MSharp.Framework >= 4.0.105",
       "Microsoft.AspNetCore.TestHost >= 3.0.0",
+      "Microsoft.EntityFrameworkCore.Tools >= 3.0.0",
       "Microsoft.NET.Test.Sdk >= 16.2.0",
       "NUnit3TestAdapter >= 3.13.0",
+      "Pomelo.EntityFrameworkCore.MySql >= 3.0.0-rc1.final",
+      "Pomelo.EntityFrameworkCore.MySql.Design >= 1.1.2",
       "nunit >= 3.12.0"
     ]
   },
@@ -7076,7 +7243,17 @@
     "frameworks": {
       "netcoreapp3.0": {
         "dependencies": {
+          "MSharp.Framework": {
+            "target": "Package",
+            "version": "[4.0.105, )"
+          },
           "Microsoft.AspNetCore.TestHost": {
+            "target": "Package",
+            "version": "[3.0.0, )"
+          },
+          "Microsoft.EntityFrameworkCore.Tools": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
             "target": "Package",
             "version": "[3.0.0, )"
           },
@@ -7087,6 +7264,14 @@
           "NUnit3TestAdapter": {
             "target": "Package",
             "version": "[3.13.0, )"
+          },
+          "Pomelo.EntityFrameworkCore.MySql": {
+            "target": "Package",
+            "version": "[3.0.0-rc1.final, )"
+          },
+          "Pomelo.EntityFrameworkCore.MySql.Design": {
+            "target": "Package",
+            "version": "[1.1.2, )"
           },
           "nunit": {
             "target": "Package",
@@ -7142,6 +7327,16 @@
       "warningLevel": 1,
       "message": "Package 'Microsoft.Net.Http 2.0.20710' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.0'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.Net.Http",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'MSharp.Framework 4.0.105' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.0'. This package may not be fully compatible with your project.",
+      "libraryId": "MSharp.Framework",
       "targetGraphs": [
         ".NETCoreApp,Version=v3.0"
       ]

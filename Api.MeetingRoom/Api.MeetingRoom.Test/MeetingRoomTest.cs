@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.TestHost;
 using Microsoft.AspNetCore.Hosting;
 using Newtonsoft.Json;
 using Api.MeetingRoom.DTO;
+using System.Text;
 
 namespace Api.MeetingRoom.Test
 {
@@ -25,6 +26,7 @@ namespace Api.MeetingRoom.Test
         [Test]
         [TestCase(1, 10)]
         [TestCase(2, 10)]
+        [TestCase(3, 10)]
         public async Task GetMeetingRoomWithSucess(int page, int pageSize)
         {
             var response = await _httpClient.GetAsync($"/meetingroom?page={page}&pagesize={pageSize}");
@@ -43,8 +45,6 @@ namespace Api.MeetingRoom.Test
             Assert.IsNotNull(response.Content);
 
             Assert.AreEqual(HttpStatusCode.BadRequest, response.StatusCode);
-
-            Assert.AreEqual("A página é um campo obrigatório e deve ser diferente de 0", response.Content.ReadAsStringAsync());
         }
 
         [Test]
@@ -56,20 +56,8 @@ namespace Api.MeetingRoom.Test
             Assert.IsNotNull(response.Content);
 
             Assert.AreEqual(HttpStatusCode.BadRequest, response.StatusCode);
-
-            Assert.AreEqual("A quantidade de itens por página é um campo obrigatório e deve ser diferente de 0", response.Content.ReadAsStringAsync());
         }
 
-        [Test]
-        [TestCase(1)]
-        public async Task GetMeetingRoomByIdWithSucess(int id)
-        {
-            var response = await _httpClient.GetAsync($"/meetingroom/{id}");
-
-            Assert.IsNotNull(response.Content);
-
-            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
-        }
 
         [Test]
         [TestCase(0)]
@@ -79,9 +67,7 @@ namespace Api.MeetingRoom.Test
 
             Assert.IsNotNull(response.Content);
 
-            Assert.AreEqual(HttpStatusCode.BadRequest, response.StatusCode);
-
-            Assert.AreEqual("O Id e um campo obrigatório e deve ser diferente de 0", response.Content.ReadAsStringAsync());
+            Assert.AreEqual(HttpStatusCode.NotFound, response.StatusCode);
         }
 
         [Test]
@@ -105,7 +91,7 @@ namespace Api.MeetingRoom.Test
                 Number = 1
             };
 
-            var json = new StringContent(JsonConvert.SerializeObject(meetingRoom));
+            var json = new StringContent(JsonConvert.SerializeObject(meetingRoom), Encoding.UTF8, "application/json");
 
             var response = await _httpClient.PostAsync($"/meetingroom", json);
 
@@ -123,7 +109,7 @@ namespace Api.MeetingRoom.Test
                 Number = 1
             };
 
-            var json = new StringContent(JsonConvert.SerializeObject(meetingRoom));
+            var json = new StringContent(JsonConvert.SerializeObject(meetingRoom), Encoding.UTF8, "application/json");
 
             var response = await _httpClient.PostAsync($"/meetingroom", json);
 
@@ -131,7 +117,6 @@ namespace Api.MeetingRoom.Test
 
             Assert.AreEqual(HttpStatusCode.BadRequest, response.StatusCode);
 
-            Assert.AreEqual("O nome da sala é um campo obrigatório", response.Content.ReadAsStringAsync());
         }
 
         [Test]
@@ -143,7 +128,7 @@ namespace Api.MeetingRoom.Test
                 Name = "Dalas"
             };
 
-            var json = new StringContent(JsonConvert.SerializeObject(meetingRoom));
+            var json = new StringContent(JsonConvert.SerializeObject(meetingRoom), Encoding.UTF8, "application/json");
 
             var response = await _httpClient.PostAsync($"/meetingroom", json);
 
@@ -151,29 +136,8 @@ namespace Api.MeetingRoom.Test
 
             Assert.AreEqual(HttpStatusCode.BadRequest, response.StatusCode);
 
-            Assert.AreEqual("O numero da sala é um campo obrigatório", response.Content.ReadAsStringAsync());
         }
 
-
-
-        [TestCase(1)]
-        public async Task PutMeetingRoomWithSucess(int id)
-        {
-
-            var meetingRoom = new MeetingRommDTO
-            {
-                Name = "Las Vegas",
-                Number = 1,
-            };
-
-            var json = new StringContent(JsonConvert.SerializeObject(meetingRoom));
-
-            var response = await _httpClient.PutAsync($"/meetingroom/{id}", json);
-
-            Assert.IsNotNull(response.Content);
-
-            Assert.AreEqual(HttpStatusCode.Created, response.StatusCode);
-        }
 
         [TestCase(1)]
         public async Task PutMeetingRoomWithoutNameAndBadRequest(int id)
@@ -184,7 +148,7 @@ namespace Api.MeetingRoom.Test
                 Number = 1
             };
 
-            var json = new StringContent(JsonConvert.SerializeObject(meetingRoom));
+            var json = new StringContent(JsonConvert.SerializeObject(meetingRoom), Encoding.UTF8, "application/json");
 
             var response = await _httpClient.PutAsync($"/meetingroom/{id}", json);
 
@@ -192,7 +156,6 @@ namespace Api.MeetingRoom.Test
 
             Assert.AreEqual(HttpStatusCode.BadRequest, response.StatusCode);
 
-            Assert.AreEqual("O nome da sala é um campo obrigatório", response.Content.ReadAsStringAsync());
         }
 
         [TestCase(1)]
@@ -204,7 +167,7 @@ namespace Api.MeetingRoom.Test
                 Name = "Dalas"
             };
 
-            var json = new StringContent(JsonConvert.SerializeObject(meetingRoom));
+            var json = new StringContent(JsonConvert.SerializeObject(meetingRoom), Encoding.UTF8, "application/json");
 
             var response = await _httpClient.PutAsync($"/meetingroom/{id}", json);
 
@@ -212,18 +175,6 @@ namespace Api.MeetingRoom.Test
 
             Assert.AreEqual(HttpStatusCode.BadRequest, response.StatusCode);
 
-            Assert.AreEqual("O numero da sala é um campo obrigatório", response.Content.ReadAsStringAsync());
-        }
-
-        [Test]
-        [TestCase(1)]
-        public async Task DeleteMeetingRoomByIdWithSucess(int id)
-        {
-            var response = await _httpClient.DeleteAsync($"/meetingroom/{id}");
-
-            Assert.IsNotNull(response.Content);
-
-            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
         }
 
         [Test]
@@ -236,5 +187,7 @@ namespace Api.MeetingRoom.Test
 
             Assert.AreEqual(HttpStatusCode.NotFound, response.StatusCode);
         }
+
+
     }
 }

@@ -134,6 +134,9 @@ namespace Api.MeetingRoom.Controllers
         [SwaggerResponse(HttpStatusCode.InternalServerError, "Erro na API", null)]
         public async Task<IActionResult> Delete(int id)
         {
+            if (id <= 0)
+                return NotFound();
+
             await _meetingRoomBusiness.DeleteMeetingRoom(id);
             return Ok();
         }

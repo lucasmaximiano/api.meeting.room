@@ -4,6 +4,7 @@
 - Você vai precisar do MYSQL
 - Você vai precisar criar o banco 'meeting_room'
 - Você vai precisar executar o script SQL disponibilizado
+- Você vai precisar abrir o seu navegador e acessar a url http://localhost:5000/docs
 
 
 ## Tecnologias implementadas:

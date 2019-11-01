@@ -6,6 +6,7 @@ using NUnit.Framework;
 using System;
 using System.Net;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Api.MeetingRoom.Test
@@ -47,7 +48,6 @@ namespace Api.MeetingRoom.Test
 
             Assert.AreEqual(HttpStatusCode.BadRequest, response.StatusCode);
 
-            Assert.AreEqual("A página é um campo obrigatório e deve ser diferente de 0", response.Content.ReadAsStringAsync());
         }
 
         [Test]
@@ -59,20 +59,9 @@ namespace Api.MeetingRoom.Test
             Assert.IsNotNull(response.Content);
 
             Assert.AreEqual(HttpStatusCode.BadRequest, response.StatusCode);
-
-            Assert.AreEqual("A quantidade de itens por página é um campo obrigatório e deve ser diferente de 0", response.Content.ReadAsStringAsync());
         }
 
-        [Test]
-        [TestCase(1)]
-        public async Task GetMeetingRoomSchedulingByIdWithSucess(int id)
-        {
-            var response = await _httpClient.GetAsync($"/meetingroomscheduling/{id}");
 
-            Assert.IsNotNull(response.Content);
-
-            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
-        }
 
         [Test]
         [TestCase(0)]
@@ -82,9 +71,8 @@ namespace Api.MeetingRoom.Test
 
             Assert.IsNotNull(response.Content);
 
-            Assert.AreEqual(HttpStatusCode.BadRequest, response.StatusCode);
+            Assert.AreEqual(HttpStatusCode.NotFound, response.StatusCode);
 
-            Assert.AreEqual("O Id e um campo obrigatório e deve ser diferente de 0", response.Content.ReadAsStringAsync());
         }
 
         [Test]
@@ -98,24 +86,6 @@ namespace Api.MeetingRoom.Test
             Assert.AreEqual(HttpStatusCode.NotFound, response.StatusCode);
         }
 
-        [Test]
-        public async Task PostMeetingRoomSchedulingWithSucess()
-        {
-            var meetingRoomScheduling = new MeetingRoomSchedulingDTO
-            {
-                Number = 1,
-                Date = DateTime.UtcNow,
-                Hour = RangeOfHoursEnum.EightOclockAM
-            };
-
-            var json = new StringContent(JsonConvert.SerializeObject(meetingRoomScheduling));
-
-            var response = await _httpClient.PostAsync($"/meetingroomscheduling", json);
-
-            Assert.IsNotNull(response.Content);
-
-            Assert.AreEqual(HttpStatusCode.Created, response.StatusCode);
-        }
 
 
         [Test]
@@ -128,76 +98,12 @@ namespace Api.MeetingRoom.Test
                 Hour = RangeOfHoursEnum.NinetOclockAM
             };
 
-            var json = new StringContent(JsonConvert.SerializeObject(meetingRoomScheduling));
+            var json = new StringContent(JsonConvert.SerializeObject(meetingRoomScheduling), Encoding.UTF8, "application/json");
 
             var response = await _httpClient.PostAsync($"/meetingroomscheduling", json);
 
             Assert.IsNotNull(response.Content);
 
-            Assert.AreEqual(HttpStatusCode.BadRequest, response.StatusCode);
-
-            Assert.AreEqual("O numero da sala é um campo obrigatório", response.Content.ReadAsStringAsync());
-        }
-
-        [Test]
-        public async Task PostMeetingRoomSchedulingWithoutDateAndBadRequest()
-        {
-            var meetingRoomScheduling = new MeetingRoomSchedulingDTO
-            {
-                Number = 2,
-                Hour = RangeOfHoursEnum.TenOclockAM
-            };
-
-            var json = new StringContent(JsonConvert.SerializeObject(meetingRoomScheduling));
-
-            var response = await _httpClient.PostAsync($"/meetingroomscheduling", json);
-
-            Assert.IsNotNull(response.Content);
-
-            Assert.AreEqual(HttpStatusCode.BadRequest, response.StatusCode);
-
-            Assert.AreEqual("A data da reunião é um campo obrigatório", response.Content.ReadAsStringAsync());
-        }
-
-        [Test]
-        public async Task PostMeetingRoomSchedulingWithoutHourAndBadRequest()
-        {
-            var meetingRoomScheduling = new MeetingRoomSchedulingDTO
-            {
-                Number = 2,
-                Date = DateTime.UtcNow
-            };
-
-            var json = new StringContent(JsonConvert.SerializeObject(meetingRoomScheduling));
-
-            var response = await _httpClient.PostAsync($"/meetingroomscheduling", json);
-
-            Assert.IsNotNull(response.Content);
-
-            Assert.AreEqual(HttpStatusCode.BadRequest, response.StatusCode);
-
-            Assert.AreEqual("A hora da reunião é um campo obrigatório", response.Content.ReadAsStringAsync());
-        }
-
-
-        [TestCase(1)]
-        public async Task PutMeetingRoomSchedulingWithSucess(int id)
-        {
-
-            var meetingRoomScheduling = new MeetingRoomSchedulingDTO
-            {
-                Number = 1,
-                Date = DateTime.UtcNow,
-                Hour = RangeOfHoursEnum.EightOclockAM
-            };
-
-            var json = new StringContent(JsonConvert.SerializeObject(meetingRoomScheduling));
-
-            var response = await _httpClient.PutAsync($"/meetingroomscheduling/{id}", json);
-
-            Assert.IsNotNull(response.Content);
-
-            Assert.AreEqual(HttpStatusCode.Created, response.StatusCode);
         }
 
 
@@ -211,67 +117,13 @@ namespace Api.MeetingRoom.Test
                 Hour = RangeOfHoursEnum.NinetOclockAM
             };
 
-            var json = new StringContent(JsonConvert.SerializeObject(meetingRoomScheduling));
+            var json = new StringContent(JsonConvert.SerializeObject(meetingRoomScheduling), Encoding.UTF8, "application/json");
 
             var response = await _httpClient.PutAsync($"/meetingroomscheduling/{id}", json);
 
             Assert.IsNotNull(response.Content);
 
             Assert.AreEqual(HttpStatusCode.BadRequest, response.StatusCode);
-
-            Assert.AreEqual("O numero da sala é um campo obrigatório", response.Content.ReadAsStringAsync());
-        }
-
-
-        [TestCase(1)]
-        public async Task PutMeetingRoomSchedulingWithoutDateAndBadRequest(int id)
-        {
-            var meetingRoomScheduling = new MeetingRoomSchedulingDTO
-            {
-                Number = 2,
-                Hour = RangeOfHoursEnum.TenOclockAM
-            };
-
-            var json = new StringContent(JsonConvert.SerializeObject(meetingRoomScheduling));
-
-            var response = await _httpClient.PutAsync($"/meetingroomscheduling/{id}", json);
-
-            Assert.IsNotNull(response.Content);
-
-            Assert.AreEqual(HttpStatusCode.BadRequest, response.StatusCode);
-
-            Assert.AreEqual("A data da reunião é um campo obrigatório", response.Content.ReadAsStringAsync());
-        }
-
-        [TestCase(1)]
-        public async Task PutMeetingRoomSchedulingWithoutHourAndBadRequest(int id)
-        {
-            var meetingRoomScheduling = new MeetingRoomSchedulingDTO
-            {
-                Number = 2,
-                Date = DateTime.UtcNow
-            };
-
-            var json = new StringContent(JsonConvert.SerializeObject(meetingRoomScheduling));
-
-            var response = await _httpClient.PutAsync($"/meetingroomscheduling/{id}", json);
-
-            Assert.IsNotNull(response.Content);
-
-            Assert.AreEqual(HttpStatusCode.BadRequest, response.StatusCode);
-
-            Assert.AreEqual("A hora da reunião é um campo obrigatório", response.Content.ReadAsStringAsync());
-        }
-
-        [Test]
-        [TestCase(1)]
-        public async Task DeleteMeetingRoomSchedulingByIdWithSucess(int id)
-        {
-            var response = await _httpClient.DeleteAsync($"/meetingroomscheduling/{id}");
-
-            Assert.IsNotNull(response.Content);
-
-            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
         }
 
         [Test]

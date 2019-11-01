@@ -20,7 +20,7 @@ namespace Api.MeetingRoom.Business
         public async Task<MeetingRoomSchedulingModel> PostMeetingRommScheduling(MeetingRoomSchedulingModel meetingRomm)
         {
             await CheckIfMeetingRoomSchedulingExists(meetingRomm.Date, meetingRomm.Number, meetingRomm.Hour);
-            await CheckIfIsValidHour(meetingRomm.Hour);
+            CheckIfIsValidHour(meetingRomm.Hour);
 
             try
             {
@@ -51,7 +51,7 @@ namespace Api.MeetingRoom.Business
             }
             catch (Exception)
             {
-                throw new BusinessException("Não foi recupera a reserva");
+                throw new BusinessException("Não foi possivel recuperar a reserva");
             }
         }
 
@@ -63,14 +63,14 @@ namespace Api.MeetingRoom.Business
             }
             catch (Exception)
             {
-                throw new BusinessException("Não foi recuperar a quantidade de reservas");
+                throw new BusinessException("Não foi possivel recuperar a quantidade de reservas");
             }
         }
 
         public async Task<MeetingRoomSchedulingModel> PutMeetingRommScheduling(int id, MeetingRoomSchedulingModel meetingRomm)
         {
             await CheckIfMeetingRoomSchedulingExists(meetingRomm.Date, meetingRomm.Number, meetingRomm.Hour);
-            await CheckIfIsValidHour(meetingRomm.Hour);
+            CheckIfIsValidHour(meetingRomm.Hour);
 
             try
             {
@@ -78,7 +78,7 @@ namespace Api.MeetingRoom.Business
             }
             catch (Exception)
             {
-                throw new BusinessException("Não foi atualizar a reserva");
+                throw new BusinessException("Não foi possivel atualizar a reserva");
             }
         }
 
@@ -90,7 +90,7 @@ namespace Api.MeetingRoom.Business
             }
             catch (Exception)
             {
-                throw new BusinessException("Não foi deletar a reserva");
+                throw new BusinessException("Não foi possivel deletar a reserva");
             }
         }
 
@@ -102,7 +102,7 @@ namespace Api.MeetingRoom.Business
                 throw new BusinessException("Já existe uma reserva nesta sala");
         }
 
-        private async Task CheckIfIsValidHour(RangeOfHoursEnum Hour)
+        private void CheckIfIsValidHour(RangeOfHoursEnum Hour)
         {
             if ((int)Hour < 8 || (int)Hour > 18)
                 throw new BusinessException("Hora da reunião fora do horário comercial");

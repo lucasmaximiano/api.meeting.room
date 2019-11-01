@@ -47,9 +47,9 @@ namespace Api.MeetingRoom
             services.AddScoped<IMeetingRoomBusiness, MeetingRoomBusiness>();
             services.AddScoped<IMeetingRoomSchedulingBusiness, MeetingRoomSchedulingBusiness>();
 
-            var connection = Configuration.GetConnectionString("ConnectionString");
-            services.AddDbContext<MeetingRoomContext>(options => options.UseMySql(connection));
-            services.AddDbContext<MeetingRoomSchedulingContext>(options => options.UseMySql(connection));
+            var connectionString = "Server=localhost;Database=meeting_room;Uid=root;Pwd=Lucas!@12QWqw;";
+            services.AddDbContext<MeetingRoomContext>(options => options.UseMySql(connectionString));
+            services.AddDbContext<MeetingRoomSchedulingContext>(options => options.UseMySql(connectionString));
 
             services.AddControllers();
             services.AddMvc();
